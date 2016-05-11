@@ -2,10 +2,13 @@
 workdir=/work
 keydir=/work/key
 
-if [ ! -d $workdir ]; then
+if [ ! -f $workdir/ss-server.conf ]; then
     echo "Create configure file.."
     mkdir $workdir
-    cp -R /conf/ss-server.conf $workdir
+    cp -R /conf $workdir
+fi
+if [ ! -d $keydir ]; then
+    echo "Create key file.."
     mkdir $keydir
     cd $keydir
     /usr/sbin/dnscrypt-wrapper --gen-provider-keypair  | grep Public > finger.txt
