@@ -5,7 +5,7 @@ keydir=/work/key
 if [ ! -f $workdir/ss-server.conf ]; then
     echo "Create configure file.."
     mkdir $workdir
-    cp -R /conf $workdir
+    cp /conf/ss-server.conf $workdir
 fi
 if [ ! -d $keydir ]; then
     echo "Create key file.."
