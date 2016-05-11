@@ -17,10 +17,9 @@ if [ ! -d $keydir ]; then
 fi
 
 echo "Start ss-server.."
-#/usr/sbin/ss-server -p 8443 -k $K -m $M $F $T
 /usr/sbin/ss-server -c $workdir/ss-server.conf -f /tmp/ss-server.pid
 
 echo "Start dnscrypt-wrapper..."
-/usr/sbin/dnscrypt-wrapper --resolver-address=8.8.8.8:53 --listen-address=0.0.0.0:443 \
-                   --provider-name=dns.baidu.com \
+/usr/sbin/dnscrypt-wrapper --resolver-address=8.8.8.8:53 --listen-address=0.0.0.0:9443 \
+                   --provider-name=2.dnscrypt-cert.baidu.com \
                    --crypt-secretkey-file=$keydir/secret.key --provider-cert-file=$keydir/dnscrypt.cert
