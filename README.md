@@ -1,9 +1,8 @@
 # ss-server
-ss-server and DNSCrypt-Wrapper with busybox 
+>ss-server and dnscrypt-wrapper with busybox 
 
-*ss-server run on 8433.*
-*DNSCrypt-Wrapper run on 443.*
-
+**ss-server run on 8433.** 
+**dnscrypt-wrapper run on 443.** 
 
 
 #### Run as default
@@ -12,7 +11,7 @@ docker run -d --name ss -p 8443:8443 -p 443:443 tisp/ss
 ```
 #### Run with some option
 ```
-docker run -d --name ss -p 8443:8443 -v ~/ss:/work tisp/ss
+docker run -d --name ss -p 8443:8443 -p 443:443 -v ~/ss-run:/work tisp/ss
 ```
 
 #### Client var.
