@@ -20,6 +20,9 @@ echo "Start ss-server.."
 /usr/sbin/ss-server -c $workdir/ss-server.conf -f /tmp/ss-server.pid
 
 echo "Start dnscrypt-wrapper..."
-/usr/sbin/dnscrypt-wrapper --resolver-address=8.8.8.8:53 --listen-address=0.0.0.0:9443 \
+/usr/sbin/dnscrypt-wrapper --resolver-address=8.8.8.8:53 \
                    --provider-name=2.dnscrypt-cert.baidu.com \
-                   --crypt-secretkey-file=$keydir/secret.key --provider-cert-file=$keydir/dnscrypt.cert
+                   --crypt-secretkey-file=$keydir/secret.key \
+                   --provider-cert-file=$keydir/dnscrypt.cert \
+                   --provider-publickey-file=$keydir/public.key
+
